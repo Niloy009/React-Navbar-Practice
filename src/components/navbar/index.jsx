@@ -6,41 +6,28 @@ import youtube from "../../images/youtube.png";
 import gmail from "../../images/gmail.jpg";
 import fb from "../../images/facebook.jpg";
 
+import Search from "./searchBox";
+import LogoTitle from "./logotitle";
+import NavBarRightItems from "./navbarRightItems";
+
 class NavBar extends React.Component {
   render() {
     return (
       <div className="topnav">
-        <div className="topnav-centered">
-          <input placeholder="Search" />
-        </div>
+        <Search />
 
-        <a href="#news">
-          <img src={logo} className="imgHeight" />
-          <span
-            style={{
-              paddingLeft: "5px",
-              position: "absolute",
-              paddingTop: "6px",
-            }}
-          >
-            React
-          </span>
-        </a>
+        <LogoTitle name="React" image={logo} link="https://reactjs.org/" />
 
-        <div className="topnav-right">
-          <a href="#search">
-            <img className="imgHeight" src={youtube} />
-          </a>
-          <a href="#about">
-            <img className="imgHeight" src={gmail} />
-          </a>
-          <a href="#about">
-            <img className="imgHeight" src={fb} />
-          </a>
-          <a href="#about">
-            <img className="imgHeight" src={google} />
-          </a>
-        </div>
+        <NavBarRightItems
+          linkA="https://www.google.com/"
+          imageA={google}
+          linkB="https://www.youtube.com/"
+          imageB={youtube}
+          linkC="https://www.google.com/intl/bn/gmail/about"
+          imageC={gmail}
+          linkD="https://www.facebook.com"
+          imageD={fb}
+        />
       </div>
     );
   }
